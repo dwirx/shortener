@@ -15,10 +15,6 @@
     {
       "source": "/nvim-lazy",
       "destination": "https://raw.githubusercontent.com/dwirx/hades-nvim/hades-lazy/install.sh"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "https://github.com/dwirx"
     }
   ]
 }
