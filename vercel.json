@@ -21,36 +21,16 @@
       "destination": "https://raw.githubusercontent.com/dwirx/nixpkgs/main/install.sh"
     },
     {
-      "source": "/google",
-      "destination": "google.com"
-    },
-    {
-      "source": "/fb",
-      "destination": "https://facebook.com"
-    },
-    {
       "source": "/yt",
       "destination": "https://youtube.com"
     },
     {
-      "source": "/x",
-      "destination": "https://x.com"
+      "source": "/vercel",
+      "destination": "https://vercel.com"
     },
     {
-      "source": "/md",
-      "destination": "https://medium.com"
-    },
-    {
-      "source": "/x",
-      "destination": "https://x.com"
-    },
-    {
-      "source": "/const fs = require(\"fs\");",
-      "destination": "https://const path = require(\"path\");"
-    },
-    {
-      "source": "/rp",
-      "destination": "https://replit.com/@PodSNI/shortener"
+      "source": "/the",
+      "destination": "https://theverge.com"
     }
   ]
 }

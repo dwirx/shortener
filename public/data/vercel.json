@@ -25,50 +25,22 @@
       "destination": "https://raw.githubusercontent.com/dwirx/nixpkgs/main/install.sh"
     },
     {
-      "source": "/google",
-      "destination": "google.com"
-    },
-    {
-      "title": "fb",
-      "description": "fb",
-      "source": "/fb",
-      "destination": "https://facebook.com"
-    },
-    {
       "title": "yt",
       "description": "yt",
       "source": "/yt",
       "destination": "https://youtube.com"
     },
     {
-      "title": "x",
-      "description": "x",
-      "source": "/x",
-      "destination": "https://x.com"
+      "title": "fuck",
+      "description": "yoiiu",
+      "source": "/vercel",
+      "destination": "https://vercel.com"
     },
     {
-      "title": "md",
-      "description": "md",
-      "source": "/md",
-      "destination": "https://medium.com"
-    },
-    {
-      "title": "x",
-      "description": "x",
-      "source": "/x",
-      "destination": "https://x.com"
-    },
-    {
-      "source": "/const fs = require(\"fs\");",
-      "destination": "https://const path = require(\"path\");",
-      "title": "",
-      "description": ""
-    },
-    {
-      "title": "rp",
-      "description": "rp",
-      "source": "/rp",
-      "destination": "https://replit.com/@PodSNI/shortener"
+      "title": "Theverge",
+      "description": "News",
+      "source": "/the",
+      "destination": "https://theverge.com"
     }
   ]
 }

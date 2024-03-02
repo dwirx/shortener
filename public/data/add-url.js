@@ -30,68 +30,86 @@ const saveJSONFile = (filePath, data) => {
 };
 
 // Input values from the terminal
-let source = getInput("Source: ");
-let destination = getInput("Destination: ");
+let source;
+let destination;
+let isRunning = true;
 
-// Menambahkan "/" ke "source" jika tidak ada
-if (!source.startsWith("/")) {
-  source = `/${source}`;
-}
-
-// Check if "https://" or "http://" is already present
-if (!destination.startsWith("https://") && !destination.startsWith("http://")) {
-  destination = `https://${destination}`;
-}
-
-// Process the first JSON file
-const firstFilePath = path.join(__dirname, "vercel.json");
-let firstData = processJSONFile(firstFilePath);
-
-// Process the second JSON file
-const secondFilePath = path.join(__dirname, "../../vercel.json");
-let secondData = processJSONFile(secondFilePath);
-
-// Check for duplicate source in either file
-const duplicateIndexFirst = firstData.redirects.findIndex(
-  (entry) => entry.source === source,
-);
-
-const duplicateIndexSecond = secondData.redirects.findIndex(
-  (entry) => entry.source === source,
-);
-
-// Ask for confirmation if duplicate source is found in either file
-if (duplicateIndexFirst !== -1 || duplicateIndexSecond !== -1) {
-  const replaceConfirmation = readline.keyInYNStrict(
-    "Duplikasi source ditemukan. Apakah Anda ingin menggantikan entri yang sudah ada?",
-  );
-  if (!replaceConfirmation) {
-    console.log("Operasi dibatalkan. Tidak ada perubahan yang dilakukan.");
-    process.exit(0);
+while (isRunning) {
+  source = getInput("Source/Path (type '/exit' to quit): ");
+  if (source.toLowerCase() === "/exit") {
+    isRunning = false;
+    continue;
   }
+
+  destination = getInput("Destination/URL: ");
+
+  // Add "/" to "source" if not present
+  if (!source.startsWith("/")) {
+    source = `/${source}`;
+  }
+
+  // Check if "https://" or "http://" is already present
+  if (
+    !destination.startsWith("https://") &&
+    !destination.startsWith("http://")
+  ) {
+    destination = `https://${destination}`;
+  }
+
+  // Process the first JSON file
+  const firstFilePath = path.join(__dirname, "vercel.json");
+  let firstData = processJSONFile(firstFilePath);
+
+  // Process the second JSON file
+  const secondFilePath = path.join(__dirname, "../../vercel.json");
+  let secondData = processJSONFile(secondFilePath);
+
+  // Check for duplicate source in either file
+  const duplicateIndexFirst = firstData.redirects.findIndex(
+    (entry) => entry.source === source,
+  );
+
+  const duplicateIndexSecond = secondData.redirects.findIndex(
+    (entry) => entry.source === source,
+  );
+
+  // Ask for confirmation if duplicate source is found in either file
+  if (duplicateIndexFirst !== -1 || duplicateIndexSecond !== -1) {
+    const replaceConfirmation = readline.keyInYNStrict(
+      "Duplikasi source ditemukan. Apakah Anda ingin menggantikan entri yang sudah ada?",
+    );
+    if (!replaceConfirmation) {
+      console.log("Operasi dibatalkan. Tidak ada perubahan yang dilakukan.");
+      continue;
+    }
+  }
+
+  // Input values specific to the first file
+  const titleFirst = getInput("Title for the first file: ");
+  const descriptionFirst = getInput("Description for the first file: ");
+
+  // Create a new entry for the first file
+  const newEntryFirst = {
+    title: titleFirst,
+    description: descriptionFirst,
+    source,
+    destination,
+  };
+
+  // Add a new entry to the first file
+  firstData.redirects.push(newEntryFirst);
+
+  // Remove title and description from the second file
+  const modifiedEntrySecond = secondData.redirects.map(
+    ({ title, description, ...rest }) => rest,
+  );
+  secondData.redirects = [...modifiedEntrySecond, { source, destination }];
+
+  // Save the updated JSON back to the files
+  saveJSONFile(firstFilePath, firstData);
+  saveJSONFile(secondFilePath, secondData);
+
+  console.log("Entri berhasil ditambahkan!");
 }
 
-// Input values specific to the first file
-const titleFirst = getInput("Title for the first file: ");
-const descriptionFirst = getInput("Description for the first file: ");
-
-// Create new entry for the first file
-const newEntryFirst = {
-  title: titleFirst,
-  description: descriptionFirst,
-  source,
-  destination,
-};
-
-// Add new entry to the first file
-firstData.redirects.push(newEntryFirst);
-
-// Remove title and description from the second file
-const modifiedEntrySecond = secondData.redirects.map(
-  ({ title, description, ...rest }) => rest,
-);
-secondData.redirects = [...modifiedEntrySecond, { source, destination }];
-
-// Save updated JSON back to the files
-saveJSONFile(firstFilePath, firstData);
-saveJSONFile(secondFilePath, secondData);
+console.log("Terima kasih! Program telah dihentikan.");
