@@ -1,0 +1,56 @@
+{
+  "redirects": [
+    {
+      "source": "/edit",
+      "destination": "https://github.com/bangundwir/shortener-url"
+    },
+    {
+      "title": "Install Nixos",
+      "description": "tentang mengistall nix os",
+      "source": "/nixos",
+      "destination": "https://gist.githubusercontent.com/nuxeh/35fb0eca2af4b305052ca11fe2521159/raw//nixinst.sh"
+    },
+    {
+      "title": "Install nixpkgs",
+      "source": "/nixpkgs",
+      "destination": "https://raw.githubusercontent.com/dwirx/nixpkgs/main/install.sh"
+    },
+    {
+      "source": "/nvim-lazy",
+      "destination": "https://raw.githubusercontent.com/dwirx/hades-nvim/hades-lazy/install.sh"
+    },
+    {
+      "title": "Install x",
+      "source": "/nixpkgs",
+      "destination": "https://raw.githubusercontent.com/dwirx/nixpkgs/main/install.sh"
+    },
+    {
+      "source": "/google",
+      "destination": "google.com"
+    },
+    {
+      "title": "fb",
+      "description": "fb",
+      "source": "/fb",
+      "destination": "https://facebook.com"
+    },
+    {
+      "title": "yt",
+      "description": "yt",
+      "source": "/yt",
+      "destination": "https://youtube.com"
+    },
+    {
+      "title": "x",
+      "description": "x",
+      "source": "/x",
+      "destination": "https://x.com"
+    },
+    {
+      "title": "md",
+      "description": "md",
+      "source": "/md",
+      "destination": "https://medium.com"
+    }
+  ]
+}
