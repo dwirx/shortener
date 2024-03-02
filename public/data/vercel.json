@@ -57,6 +57,18 @@
       "description": "x",
       "source": "/x",
       "destination": "https://x.com"
+    },
+    {
+      "source": "/const fs = require(\"fs\");",
+      "destination": "https://const path = require(\"path\");",
+      "title": "",
+      "description": ""
+    },
+    {
+      "title": "rp",
+      "description": "rp",
+      "source": "/rp",
+      "destination": "https://replit.com/@PodSNI/shortener"
     }
   ]
 }

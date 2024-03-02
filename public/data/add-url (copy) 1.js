@@ -30,6 +30,8 @@ const saveJSONFile = (filePath, data) => {
 };
 
 // Input values from the terminal
+const title = getInput("Title: ");
+const description = getInput("Description: ");
 let source = getInput("Source: ");
 let destination = getInput("Destination: ");
 
@@ -48,7 +50,7 @@ const firstFilePath = path.join(__dirname, "vercel.json");
 let firstData = processJSONFile(firstFilePath);
 
 // Process the second JSON file
-const secondFilePath = path.join(__dirname, "../../vercel.json");
+const secondFilePath = path.join(__dirname, "../../vercel.json"); // Ganti dengan path relatif yang sesuai
 let secondData = processJSONFile(secondFilePath);
 
 // Check for duplicate source in either file
@@ -71,26 +73,10 @@ if (duplicateIndexFirst !== -1 || duplicateIndexSecond !== -1) {
   }
 }
 
-// Input values specific to the first file
-const titleFirst = getInput("Title for the first file: ");
-const descriptionFirst = getInput("Description for the first file: ");
-
-// Create new entry for the first file
-const newEntryFirst = {
-  title: titleFirst,
-  description: descriptionFirst,
-  source,
-  destination,
-};
-
-// Add new entry to the first file
-firstData.redirects.push(newEntryFirst);
-
-// Remove title and description from the second file
-const modifiedEntrySecond = secondData.redirects.map(
-  ({ title, description, ...rest }) => rest,
-);
-secondData.redirects = [...modifiedEntrySecond, { source, destination }];
+// Combine existing data with new entry
+const newEntry = { title, description, source, destination };
+firstData.redirects.push(newEntry);
+secondData.redirects.push(newEntry);
 
 // Save updated JSON back to the files
 saveJSONFile(firstFilePath, firstData);
