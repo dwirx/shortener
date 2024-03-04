@@ -44,7 +44,7 @@
     },
     {
       "title": "install configuration nix",
-      "description": "donwload",
+      "description": "bash <(curl -L https://www.dwx.my.id//nixset)",
       "source": "/nixset",
       "destination": "https://raw.githubusercontent.com/dwirx/NixOs/master/NixOs/nixset.sh"
     }
