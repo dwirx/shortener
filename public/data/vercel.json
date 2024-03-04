@@ -56,7 +56,7 @@
     },
     {
       "title": "configuration nix",
-      "description": "Configurationnix",
+      "description": "curl -LO dwx.my.id/config",
       "source": "/config",
       "destination": "https://raw.githubusercontent.com/dwirx/NixOs/master/NixOs/configuration.nix"
     }
