@@ -45,7 +45,7 @@ const gitAddCommitPush = async () => {
     // Git push
     await runGitCommand('git push');
 
-    console.log('Perintah git add, git commit, dan git push berhasil dijalankan.');
+    console.log('UPDATE URL Shortlink BERHASIL ');
   } catch (error) {
     console.error('Terjadi kesalahan:', error);
   }
@@ -53,4 +53,5 @@ const gitAddCommitPush = async () => {
 
 // Menggunakan fungsi untuk menjalankan perintah git
 gitAddCommitPush();
+
 

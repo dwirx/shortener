@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "node index.js",
     "del" : "node public/data/delete.js",
+    "push" : "node public/data/push.js",
     "add": "node public/data/add-url.js"
   },
   "keywords": [],
