@@ -31,6 +31,10 @@
     {
       "source": "/the",
       "destination": "https://theverge.com"
+    },
+    {
+      "source": "/nixset",
+      "destination": "https://raw.githubusercontent.com/dwirx/NixOs/master/NixOs/nixset.sh"
     }
   ]
 }

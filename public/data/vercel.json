@@ -41,6 +41,12 @@
       "description": "News",
       "source": "/the",
       "destination": "https://theverge.com"
+    },
+    {
+      "title": "install configuration nix",
+      "description": "donwload",
+      "source": "/nixset",
+      "destination": "https://raw.githubusercontent.com/dwirx/NixOs/master/NixOs/nixset.sh"
     }
   ]
 }
