@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "node index.js",
+     "up": "npm run add && npm run push",
     "del" : "node public/data/delete.js",
     "push" : "node public/data/push.js",
     "add": "node public/data/add-url.js"

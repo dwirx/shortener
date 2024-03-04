@@ -53,6 +53,12 @@
       "description": "<(curl -L dwx.my.id/nx)",
       "source": "/nx",
       "destination": "https://gist.githubusercontent.com/dwirx/7af71edb994966d6c2d2553a1a159273/raw/9df931b0fee606a2cbd8e164ea96d91c13c6f3eb/nixinstall.sh"
+    },
+    {
+      "title": "configuration nix",
+      "description": "Configurationnix",
+      "source": "/config",
+      "destination": "https://raw.githubusercontent.com/dwirx/NixOs/master/NixOs/configuration.nix"
     }
   ]
 }
