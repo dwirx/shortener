@@ -52,7 +52,7 @@
       "title": "Nix Install Simple",
       "description": "bash <(sudo curl -L dwx.my.id/nx)",
       "source": "/nx",
-      "destination": "https://gist.githubusercontent.com/dwirx/7af71edb994966d6c2d2553a1a159273/raw/9df931b0fee606a2cbd8e164ea96d91c13c6f3eb/nixinstall.sh"
+      "destination": "https://gist.githubusercontent.com/dwirx/7af71edb994966d6c2d2553a1a159273/raw/1474ec850f0e3a5fbfceab8510587e9e7d73c535/nixinstall.sh"
     },
     {
       "title": "configuration nix",
